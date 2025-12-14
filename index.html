@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezy Cardiansyah Fizri - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/profile.jpg">
+    <meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self'; 
+               script-src 'self' https://cdnjs.cloudflare.com https://*.github.io; 
+               style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; 
+               font-src 'self' https://fonts.gstatic.com; 
+               img-src 'self' data: https:; 
+               connect-src 'self';
+               frame-src 'none';
+               object-src 'none'">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-container">
+            <div class="loading-spinner">
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+            </div>
+            <div class="loading-text">
+                <span class="loading-char">L</span>
+                <span class="loading-char">O</span>
+                <span class="loading-char">A</span>
+                <span class="loading-char">D</span>
+                <span class="loading-char">I</span>
+                <span class="loading-char">N</span>
+                <span class="loading-char">G</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="bg-elements">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="glass-header" data-aos="fade-down">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-text">EZY CF</span>
+                    <span class="logo-sub">Portfolio</span>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-controls">
+                    <button class="lang-toggle" id="lang-toggle">
+                        <span class="lang-flag">🇮🇩</span>
+                        <span class="lang-text">ID</span>
+                    </button>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <div class="hero-text">
+                        <h3 class="hero-subtitle" data-lang-key="hero-subtitle">Student of Computer Science</h3>
+                        <h1 class="hero-title">Ezy Cardiansyah Fizri</h1>
+                        <p class="hero-description" data-lang-key="hero-description">
+                            Halo! Saya Ezy Cardiansyah, seorang pengembang web dan saya juga seorang editor pemula yang mampu menggunakan software editing foto dan video. Saya pernah membuat suatu server juga memanagement suatu server seperti VPS, Dedicated Server, dan Cloud Server.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary" data-lang-key="contact-btn">Contact Me</a>
+                            <a href="#certificates" class="btn btn-secondary" data-lang-key="certificates-btn">View Certificates</a>
+                        </div>
+                    </div>
+                    <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="image-container">
+                            <div class="profile-image">
+                                <img src="assets/images/profile.jpg" alt="Ezy Cardiansyah Fizri">
+                            </div>
+                            <div class="image-glow"></div>
+                            <div class="floating-elements">
+                                <div class="float-element el-1"><i class="fas fa-code"></i></div>
+                                <div class="float-element el-2"><i class="fas fa-server"></i></div>
+                                <div class="float-element el-3"><i class="fas fa-robot"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <p class="scroll-text" data-lang-key="scroll-text">Scroll down</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title" data-lang-key="about-title">About Me</h2>
+                    <p class="section-subtitle" data-lang-key="about-subtitle">Get to know me better</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <h3 class="about-name">Ezy Cardiansyah Fizri</h3>
+                        <p class="about-role">Mahasiswa Ilmu Komputer - Universitas Pakuan</p>
+                        <p class="about-description" data-lang-key="about-description">
+                            Saya adalah mahasiswa semester 1 di Universitas Pakuan, Fakultas Ilmu Komputer. Saya memiliki minat yang besar dalam pengembangan web, pengelolaan server, dan teknologi terbaru. Selain itu, saya juga memiliki pengalaman dalam editing foto dan video.
+                        </p>
+                        <p class="about-description" data-lang-key="about-description-2">
+                            Saya aktif mengikuti berbagai seminar dan workshop untuk meningkatkan pengetahuan dan keterampilan saya di bidang teknologi. Saat ini, saya juga menawarkan jasa instalasi driver dan software komputer, serta menjadi modder kendaraan untuk FiveM Roleplay.
+                        </p>
+                        
+                        <div class="about-info">
+                            <div class="info-item">
+                                <span class="info-label" data-lang-key="email-label">Email:</span>
+                                <span class="info-value">ezycrdansyh@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label" data-lang-key="education-label">Education:</span>
+                                <span class="info-value" data-lang-key="education-value">Universitas Pakuan, Computer Science</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label" data-lang-key="semester-label">Semester:</span>
+                                <span class="info-value" data-lang-key="semester-value">Semester 1</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label" data-lang-key="location-label">Location:</span>
+                                <span class="info-value" data-lang-key="location-value">Bogor, Indonesia</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stats" data-aos="fade-left" data-aos-delay="200">
+                        <div class="stat-card glass-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3 class="stat-number">4+</h3>
+                            <p class="stat-text" data-lang-key="certificates-stat">Certificates</p>
+                        </div>
+                        
+                        <div class="stat-card glass-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="stat-number">2+</h3>
+                            <p class="stat-text" data-lang-key="projects-stat">Projects</p>
+                        </div>
+                        
+                        <div class="stat-card glass-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3 class="stat-number">3+</h3>
+                            <p class="stat-text" data-lang-key="servers-stat">Servers Managed</p>
+                        </div>
+                        
+                        <div class="stat-card glass-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="stat-number">100%</h3>
+                            <p class="stat-text" data-lang-key="satisfaction-stat">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title" data-lang-key="skills-title">Skills</h2>
+            <p class="section-subtitle" data-lang-key="skills-subtitle">My technical abilities</p>
+        </div>
+        
+        <div class="skills-container">
+            <!-- Web Development -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3 class="category-title" data-lang-key="webdev-title">Web Development</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">React</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-percent">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="65"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Software & Tools -->
+            <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="category-title" data-lang-key="software-title">Software & Tools</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Adobe Photoshop</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Wondershare Filmora</span>
+                            <span class="skill-percent">100%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Figma</span>
+                            <span class="skill-percent">45%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="45"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">VS Code</span>
+                            <span class="skill-percent">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Installed Software</span>
+                            <span class="skill-percent">100%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Server Management -->
+            <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="category-title" data-lang-key="server-title">Server Management</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">VPS Management</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Dedicated Server</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Cloud Server</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">FiveM Server</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skills-icons" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+                <i class="fab fa-html5"></i>
+                <span>HTML5</span>
+            </div>
+            <div class="icon-box">
+                <i class="fab fa-css3-alt"></i>
+                <span>CSS3</span>
+            </div>
+            <div class="icon-box">
+                <i class="fab fa-js"></i>
+                <span>JavaScript</span>
+            </div>
+            <div class="icon-box">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+            </div>
+            <div class="icon-box">
+                <i class="fab fa-node-js"></i>
+                <span>Node.js</span>
+            </div>
+            <div class="icon-box">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </div>
+            <div class="icon-box">
+                <i class="fab fa-figma"></i>
+                <span>Figma</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="certificates-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title" data-lang-key="certificates-title">Certificates</h2>
+                    <p class="section-subtitle" data-lang-key="certificates-subtitle">My achievements and recognitions</p>
+                </div>
+                
+                <div class="certificates-container">
+                    <div class="certificate-card glass-card" data-aos="flip-left">
+                        <div class="certificate-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="certificate-title" data-lang-key="cert1-title">Applications Of Robots in Various Fields 2024</h3>
+                        <p class="certificate-desc" data-lang-key="cert1-desc">Seminar & Workshop tentang aplikasi robotika di berbagai bidang</p>
+                        <div class="certificate-tag">
+                            <span data-lang-key="participation">Participation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card glass-card" data-aos="flip-left" data-aos-delay="100">
+                        <div class="certificate-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="certificate-title" data-lang-key="cert2-title">Pembinaan Kesadaran Bela Negara (PKBN) 2025</h3>
+                        <p class="certificate-desc" data-lang-key="cert2-desc">Program pembinaan untuk meningkatkan kesadaran bela negara</p>
+                        <div class="certificate-tag">
+                            <span data-lang-key="training">Training</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card glass-card" data-aos="flip-left" data-aos-delay="200">
+                        <div class="certificate-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3 class="certificate-title" data-lang-key="cert3-title">Pengenalan Kehidupan Kampus (PKKMB) 2025</h3>
+                        <p class="certificate-desc" data-lang-key="cert3-desc">Pengenalan kehidupan kampus bagi mahasiswa baru Universitas Pakuan</p>
+                        <div class="certificate-tag">
+                            <span data-lang-key="orientation">Orientation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card glass-card" data-aos="flip-left" data-aos-delay="300">
+                        <div class="certificate-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="certificate-title" data-lang-key="cert4-title">Website Terbaik - Bincang Ilmu Teknologi (BIT) 2025</h3>
+                        <p class="certificate-desc" data-lang-key="cert4-desc">Penghargaan untuk website terbaik dalam kegiatan Bincang Ilmu Teknologi</p>
+                        <div class="certificate-tag">
+                            <span data-lang-key="award">Award</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title" data-lang-key="services-title">My Services</h2>
+                    <p class="section-subtitle" data-lang-key="services-subtitle">What I can do for you</p>
+                </div>
+                
+                <div class="services-container">
+                    <div class="service-card glass-card" data-aos="zoom-in">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <h3 class="service-title" data-lang-key="service1-title">Driver & Software Installation</h3>
+                        <p class="service-desc" data-lang-key="service1-desc">Instalasi driver dan software pada komputer seperti Windows dan Linux. dan juga DRIVER pada komputer</p>
+                    </div>
+                    
+                    <div class="service-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="service-title" data-lang-key="service2-title">Vehicle Modder for FiveM</h3>
+                        <p class="service-desc" data-lang-key="service2-desc">Modifikasi kendaraan seperti livery, penghapusan bagian COPYRIGHT, penyesuaian model dan Ringan</p>
+                    </div>
+                    
+                    <div class="service-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="service-title" data-lang-key="service3-title">FiveM Server Setup</h3>
+                        <p class="service-desc" data-lang-key="service3-desc">Setup dan konfigurasi server FiveM Roleplay dengan berbagai fitur custom.</p>
+                    </div>
+                    
+                    <div class="service-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3 class="service-title" data-lang-key="service4-title">Photo & Video Editing</h3>
+                        <p class="service-desc" data-lang-key="service4-desc">Editing foto dan video menggunakan software profesional seperti Adobe Photoshop dan Wondershare Filmora.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Timeline Section -->
+<section id="timeline" class="timeline-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title" data-lang-key="timeline-title">Linimasa & Pengalaman</h2>
+            <p class="section-subtitle" data-lang-key="timeline-subtitle">Perjalanan dan pengalaman saya</p>
+        </div>
+        
+        <div class="timeline-container">
+            <div class="timeline">
+                <!-- New Experiences -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="timeline-title" data-lang-key="timeline6-title">Modder Kendaraan FiveM</h3>
+                        <p class="timeline-desc" data-lang-key="timeline6-desc">Modifikasi kendaraan seperti livery, penghapusan bagian COPYRIGHT, penyesuaian model dan Ringan</p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">FiveM</span>
+                            <span class="timeline-tag">Livery Modeling</span>
+                            <span class="timeline-tag">Vehicle Modding</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3 class="timeline-title" data-lang-key="timeline7-title">Modder Baju FiveM</h3>
+                        <p class="timeline-desc" data-lang-key="timeline7-desc">Mendesain texture baju custom untuk karakter player dan NPC di server FiveM dengan variasi yang unik.</p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">FiveM</span>
+                            <span class="timeline-tag">Texture Design</span>
+                            <span class="timeline-tag">Character Customization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-date">2024 - Sekarang</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="timeline-title" data-lang-key="timeline8-title">Editor Grafis & Multimedia</h3>
+                        <p class="timeline-desc" data-lang-key="timeline8-desc">Membuat desain banner, logo, thumbnail, dan konten visual lainnya untuk berbagai keperluan digital.</p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">Graphic Design</span>
+                            <span class="timeline-tag">Photoshop</span>
+                            <span class="timeline-tag">Premiere Pro</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Previous Experiences -->
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="timeline-title" data-lang-key="timeline1-title">Website Terbaik - BIT 2025</h3>
+                        <p class="timeline-desc" data-lang-key="timeline1-desc">Memenangkan penghargaan website terbaik pada kegiatan Bincang Ilmu Teknologi (BIT) 2025.</p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">Award</span>
+                            <span class="timeline-tag">Web Development</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="timeline-title" data-lang-key="timeline2-title">Pembinaan Kesadaran Bela Negara</h3>
+                        <p class="timeline-desc" data-lang-key="timeline2-desc">Mengikuti program PKBN untuk meningkatkan kesadaran bela negara.</p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">Training</span>
+                            <span class="timeline-tag">Leadership</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="500">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3 class="timeline-title" data-lang-key="timeline3-title">Mahasiswa Baru Universitas Pakuan</h3>
+                        <p class="timeline-desc" data-lang-key="timeline3-desc">Memulai pendidikan S1 Ilmu Komputer di Universitas Pakuan semester 1.</p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">Education</span>
+                            <span class="timeline-tag">Computer Science</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="600">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="timeline-title" data-lang-key="timeline4-title">Seminar Robotika</h3>
+                        <p class="timeline-desc" data-lang-key="timeline4-desc">Mengikuti seminar dan workshop tentang aplikasi robotika di berbagai bidang.</p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">Seminar</span>
+                            <span class="timeline-tag">Robotics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="700">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="timeline-title" data-lang-key="timeline5-title">Memulai Pengembangan Web</h3>
+                        <p class="timeline-desc" data-lang-key="timeline5-desc">Memulai perjalanan dalam pengembangan web dan manajemen server.</p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">Web Development</span>
+                            <span class="timeline-tag">Server Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Experience Summary Section -->
+        <div class="experience-summary" data-aos="fade-up">
+            <h3 class="summary-title" data-lang-key="experience-summary-title">Ringkasan Pengalaman</h3>
+            <div class="summary-cards">
+                <div class="summary-card glass-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h4 data-lang-key="fivem-exp">FiveM Modding</h4>
+                    <p data-lang-key="fivem-exp-desc">Pengalaman dalam modifikasi kendaraan dan baju untuk server Roleplay FiveM dengan fokus pada detail dan performa.</p>
+                </div>
+                
+                <div class="summary-card glass-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h4 data-lang-key="design-exp">Desain Grafis</h4>
+                    <p data-lang-key="design-exp-desc">Keahlian dalam pembuatan banner, logo, dan konten visual lainnya menggunakan tools profesional.</p>
+                </div>
+                
+                <div class="summary-card glass-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h4 data-lang-key="server-exp">Server Management</h4>
+                    <p data-lang-key="server-exp-desc">Pengalaman setup dan maintenance server FiveM, VPS, dan dedicated server dengan konfigurasi optimal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title" data-lang-key="contact-title">Contact Me</h2>
+                    <p class="section-subtitle" data-lang-key="contact-subtitle">Let's work together</p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h3 class="contact-heading" data-lang-key="contact-info-title">Get in Touch</h3>
+                        <p class="contact-description" data-lang-key="contact-info-desc">
+                            Tertarik dengan layanan saya? Mari berdiskusi tentang proyek Anda atau sekadar menyapa!
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4 data-lang-key="email-label">Email</h4>
+                                    <p>ezycrdansyh@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4 data-lang-key="location-label">Location</h4>
+                                    <p data-lang-key="location-value">Bogor, Indonesia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4 data-lang-key="education-label">Education</h4>
+                                    <p data-lang-key="education-value">Universitas Pakuan, Computer Science</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h4 data-lang-key="social-title">Follow Me</h4>
+                            <div class="social-icons">
+                                <a href="https://github.com/ezycardiansyah" target="_blank" class="social-icon">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://instagram.com/ezycrdansyh" target="_blank" class="social-icon">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="mailto:ezycrdansyh@gmail.com" class="social-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form" data-aos="fade-left" data-aos-delay="200">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name" data-lang-key="form-name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" data-lang-key="form-email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" data-lang-key="form-subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" data-lang-key="form-message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" data-lang-key="form-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">EZY CARDIANSYAH FIZRI</span>
+                    <span class="logo-sub">Portfolio</span>
+                </div>
+                
+                <p class="footer-text" data-lang-key="footer-text">
+                    Mahasiswa Ilmu Komputer | Web Developer | Server Management
+                </p>
+                
+                <div class="footer-social">
+                    <a href="https://github.com/ezycardiansyah" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com/ezycrdansyh" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:ezycrdansyh@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                
+                <p class="footer-copyright">
+                    &copy; 2025 Ezy Cardiansyah Fizri. <span data-lang-key="footer-rights">All rights reserved.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

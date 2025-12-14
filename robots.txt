@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /*.env$
+Disallow: /*.config$
+Disallow: /*.sql$
+Allow: /
+
+Sitemap: https://EzyCardiansyahFizriPortofolio.github.io/sitemap.xml
