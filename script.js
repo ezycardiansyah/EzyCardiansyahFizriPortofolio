@@ -345,4 +345,61 @@ window.addEventListener('scroll', animateSkillBars);
             }
         });
     });
+
+});
+
+function checkFontAwesome() {
+    console.log('=== FONT AWESOME DEBUG ===');
+    
+    // Cek apakah Font Awesome sudah loaded
+    const styleSheets = Array.from(document.styleSheets);
+    const hasFontAwesome = styleSheets.some(sheet => {
+        try {
+            return sheet.href && sheet.href.includes('fontawesome');
+        } catch (e) {
+            return false;
+        }
+    });
+    
+    console.log('Font Awesome loaded:', hasFontAwesome);
+    
+    // Cek icon elements
+    const icons = document.querySelectorAll('.fa, .fab, .fas, .far');
+    console.log('Total Font Awesome icons found:', icons.length);
+    
+    if (icons.length === 0) {
+        console.error('❌ Tidak ada icon Font Awesome yang ditemukan!');
+        console.log('Mencoba load Font Awesome secara manual...');
+        
+        // Load Font Awesome secara dinamis
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+        document.head.appendChild(link);
+        
+        console.log('✅ Font Awesome dimuat ulang');
+    } else {
+        console.log('✅ Font Awesome icons ditemukan');
+        
+        // Cek style setiap icon
+        icons.forEach((icon, index) => {
+            const style = window.getComputedStyle(icon, '::before');
+            const content = style.content;
+            console.log(`Icon ${index + 1} (${icon.className}):`, {
+                content: content,
+                fontFamily: style.fontFamily,
+                display: style.display
+            });
+            
+            // Jika content kosong, berarti font tidak loaded
+            if (content === 'none' || content === '""') {
+                console.warn(`⚠️ Icon ${icon.className} tidak memiliki content!`);
+            }
+        });
+    }
+}
+
+// Run check setelah page load
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(checkFontAwesome, 1000); // Tunggu 1 detik
 });
