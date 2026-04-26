@@ -41,6 +41,21 @@ const translations = {
         "software-title": "Software & Tools",
         "server-title": "Server Management",
         
+        // Skill names (untuk animation)
+        "skill-html": "HTML/CSS",
+        "skill-js": "JavaScript",
+        "skill-react": "React",
+        "skill-node": "Node.js",
+        "skill-photoshop": "Adobe Photoshop",
+        "skill-filmora": "Wondershare Filmora",
+        "skill-figma": "Figma",
+        "skill-vscode": "VS Code",
+        "skill-install": "Installed Software",
+        "skill-vps": "VPS Management",
+        "skill-dedicated": "Dedicated Server",
+        "skill-cloud": "Cloud Server",
+        "skill-fivem": "FiveM Server",
+        
         // Certificates Section
         "certificates-title": "Certificates",
         "certificates-subtitle": "My achievements and recognitions",
@@ -116,26 +131,9 @@ const translations = {
         
         // Footer
         "footer-text": "Computer Science Student | Web Developer | Server Management",
-        "footer-rights": "All rights reserved.",
-        
-        // Additional Tags
-        "3D Modeling": "3D Modeling",
-        "Vehicle Modding": "Vehicle Modding",
-        "Texture Design": "Texture Design",
-        "Character Customization": "Character Customization",
-        "Graphic Design": "Graphic Design",
-        "Web Development": "Web Development",
-        "Server Management": "Server Management",
-        "Award": "Award",
-        "Training": "Training",
-        "Leadership": "Leadership",
-        "Education": "Education",
-        "Computer Science": "Computer Science",
-        "Seminar": "Seminar",
-        "Robotics": "Robotics"
+        "footer-rights": "All rights reserved."
     },
     
-
     id: {
         // Navigation
         "home": "Beranda",
@@ -176,6 +174,21 @@ const translations = {
         "webdev-title": "Pengembangan Web",
         "software-title": "Software & Alat",
         "server-title": "Manajemen Server",
+        
+        // Skill names
+        "skill-html": "HTML/CSS",
+        "skill-js": "JavaScript",
+        "skill-react": "React",
+        "skill-node": "Node.js",
+        "skill-photoshop": "Adobe Photoshop",
+        "skill-filmora": "Wondershare Filmora",
+        "skill-figma": "Figma",
+        "skill-vscode": "VS Code",
+        "skill-install": "Instalasi Software",
+        "skill-vps": "Manajemen VPS",
+        "skill-dedicated": "Dedicated Server",
+        "skill-cloud": "Cloud Server",
+        "skill-fivem": "Server FiveM",
         
         // Certificates Section
         "certificates-title": "Sertifikat",
@@ -252,22 +265,9 @@ const translations = {
         
         // Footer
         "footer-text": "Mahasiswa Ilmu Komputer | Web Developer | Manajemen Server",
-        "footer-rights": "Hak cipta dilindungi.",
-        
-        // Additional Tags
-        "3D Modeling": "3D Modeling",
-        "Vehicle Modding": "Modding Kendaraan",
-        "Texture Design": "Desain Texture",
-        "Character Customization": "Kustomisasi Karakter",
-        "Graphic Design": "Desain Grafis",
-        "Web Development": "Pengembangan Web",
-        "Server Management": "Manajemen Server",
-        "Award": "Penghargaan",
-        "Training": "Pelatihan",
-        "Leadership": "Kepemimpinan",
-        "Education": "Pendidikan",
-        "Computer Science": "Ilmu Komputer",
-        "Seminar": "Seminar",
-        "Robotics": "Robotika"
+        "footer-rights": "Hak cipta dilindungi."
     }
 };
+
+// Untuk debug - cek apakah translations tersedia
+console.log('Translations loaded:', Object.keys(translations));

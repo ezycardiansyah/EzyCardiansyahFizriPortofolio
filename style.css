@@ -11,7 +11,7 @@
     --secondary-color: #36D1DC;
     --accent-color: #FF6584;
     --dark-color: #2D2B55;
-    --light-color: #F5F5F7;
+    --light-color: #f5f5f7;
     --text-color: #333333;
     --text-light: #777777;
     --glass-bg: rgba(255, 255, 255, 0.1);
@@ -28,9 +28,9 @@
     --secondary-color: #3FD8E5;
     --accent-color: #FF6B8B;
     --dark-color: #121212;
-    --light-color: #1E1E1E;
-    --text-color: #FFFFFF;
-    --text-light: #AAAAAA;
+    --light-color: #1e1e1e;
+    --text-color: #ffffff;
+    --text-light: #aaaaaa;
     --glass-bg: rgba(30, 30, 30, 0.3);
     --glass-border: rgba(255, 255, 255, 0.1);
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -293,22 +293,22 @@ p {
 
 .logo {
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    gap: 8px;
 }
 
 .logo-text {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 900;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin-right: 5px;
 }
 
 .logo-sub {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-light);
     letter-spacing: 2px;
 }
@@ -659,7 +659,7 @@ p {
     color: transparent;
 }
 
-/* Skills Section - Fixed */
+/* Skills Section */
 .skills-section {
     position: relative;
     z-index: 1;
@@ -804,38 +804,6 @@ p {
     text-align: center;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .skills-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .skills-category {
-        padding: 25px;
-    }
-}
-
-@media (max-width: 576px) {
-    .skills-icons {
-        gap: 15px;
-    }
-    
-    .icon-box {
-        width: 80px;
-        padding: 15px;
-    }
-    
-    .icon-box i {
-        font-size: 2rem;
-    }
-}
-
 /* Certificates Section */
 .certificates-container {
     display: grid;
@@ -925,6 +893,10 @@ p {
     margin: 50px auto 0;
 }
 
+.timeline {
+    position: relative;
+}
+
 .timeline::before {
     content: '';
     position: absolute;
@@ -965,6 +937,8 @@ p {
     width: calc(50% - 80px);
     padding: 25px;
     margin: 0 30px;
+    position: relative;
+    overflow: hidden;
 }
 
 .timeline-title {
@@ -977,7 +951,6 @@ p {
     font-size: 0.9rem;
 }
 
-/* Updated Timeline Styling */
 .timeline-icon {
     font-size: 1.8rem;
     color: var(--primary-color);
@@ -1005,12 +978,6 @@ p {
 .timeline-tag:hover {
     background: var(--primary-color);
     color: white;
-}
-
-.timeline-content {
-    padding: 30px;
-    position: relative;
-    overflow: hidden;
 }
 
 .timeline-content::before {
@@ -1072,23 +1039,6 @@ p {
 
 .summary-card p {
     font-size: 0.95rem;
-}
-
-/* Responsive adjustments for timeline */
-@media (max-width: 992px) {
-    .summary-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .summary-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .timeline-content {
-        padding: 25px;
-    }
 }
 
 /* Contact Section */
@@ -1218,7 +1168,8 @@ p {
 
 .footer-logo {
     display: inline-flex;
-    align-items: center;
+    align-items: baseline;
+    gap: 8px;
     margin-bottom: 20px;
 }
 
@@ -1425,6 +1376,10 @@ p {
     .services-container {
         grid-template-columns: 1fr;
     }
+    
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1456,39 +1411,28 @@ p {
     }
 }
 
-/* CSS untuk watermark */
+/* Watermark - lebih subtle */
 body::after {
     content: "© Ezy Cardiansyah Fizri";
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: rgba(0,0,0,0.1);
-    font-size: 24px;
-    font-weight: bold;
+    bottom: 10px;
+    right: 10px;
+    color: rgba(0,0,0,0.05);
+    font-size: 12px;
+    font-weight: normal;
     pointer-events: none;
     z-index: 9999;
-    transform: rotate(-45deg);
     user-select: none;
 }
 
 /* Proteksi images dari drag */
 img {
     -webkit-user-drag: none;
-    pointer-events: none;
-}
-
-/* Proteksi text selection */
-body {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
-/* Allow selection for specific elements */
-p, h1, h2, h3, h4, h5, h6, span, a {
+/* Allow selection for text content */
+p, h1, h2, h3, h4, h5, h6, span, a, .about-description, .hero-description {
     -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
     user-select: text;
 }

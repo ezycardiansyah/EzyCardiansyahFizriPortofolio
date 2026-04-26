@@ -1,0 +1,20 @@
+portfolio-ezy/
+│
+├── index.html
+├── style.css
+├── script.js
+├── translations.js
+├── assets/
+│   ├── images/
+│   │   ├── profile.jpg
+│   │   ├── certificate1.jpg
+│   │   ├── certificate2.jpg
+│   │   ├── certificate3.jpg
+│   │   └── certificate4.jpg
+│   └── icons/
+│       ├── github.svg
+│       ├── linkedin.svg
+│       ├── instagram.svg
+│       └── email.svg
+│
+└── README.md
