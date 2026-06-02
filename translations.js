@@ -20,13 +20,13 @@ const translations = {
         // About Section
         "about-title": "About Me",
         "about-subtitle": "Get to know me better",
-        "about-description": "I am a first semester student at Pakuan University, Faculty of Computer Science. I have a great interest in web development, server management, and the latest technology. In addition, I also have experience in photo and video editing.",
+        "about-description": "I am an active student at Pakuan University, Faculty of Computer Science. I have a great interest in web development, server management, and the latest technology. In addition, I also have experience in photo and video editing.",
         "about-description-2": "I actively participate in various seminars and workshops to improve my knowledge and skills in the field of technology. Currently, I also offer driver and software installation services for computers, as well as being a vehicle modder for FiveM Roleplay.",
         "email-label": "Email",
         "education-label": "Education",
         "education-value": "Pakuan University, Computer Science",
-        "semester-label": "Semester",
-        "semester-value": "Semester 1",
+        "status-label": "Status",
+        "status-value": "Active Student",
         "location-label": "Location",
         "location-value": "Bogor, Indonesia",
         "certificates-stat": "Certificates",
@@ -40,21 +40,6 @@ const translations = {
         "webdev-title": "Web Development",
         "software-title": "Software & Tools",
         "server-title": "Server Management",
-        
-        // Skill names (untuk animation)
-        "skill-html": "HTML/CSS",
-        "skill-js": "JavaScript",
-        "skill-react": "React",
-        "skill-node": "Node.js",
-        "skill-photoshop": "Adobe Photoshop",
-        "skill-filmora": "Wondershare Filmora",
-        "skill-figma": "Figma",
-        "skill-vscode": "VS Code",
-        "skill-install": "Installed Software",
-        "skill-vps": "VPS Management",
-        "skill-dedicated": "Dedicated Server",
-        "skill-cloud": "Cloud Server",
-        "skill-fivem": "FiveM Server",
         
         // Certificates Section
         "certificates-title": "Certificates",
@@ -83,10 +68,6 @@ const translations = {
         "service3-desc": "Setup and configuration of FiveM Roleplay servers with various custom features.",
         "service4-title": "Photo & Video Editing",
         "service4-desc": "Photo and video editing using professional software such as Adobe Photoshop and Premiere Pro.",
-        "service5-title": "Clothing Modder for FiveM",
-        "service5-desc": "Custom clothing texture decoration for player characters and NPCs in FiveM servers.",
-        "service6-title": "Graphic Design Services",
-        "service6-desc": "Banner design, logo, thumbnail, and other visual content services for your digital needs.",
         
         // Timeline Section
         "timeline-title": "Timeline & Experience",
@@ -95,8 +76,8 @@ const translations = {
         "timeline1-desc": "Won the best website award at the Technology Science Talk (BIT) 2025 event.",
         "timeline2-title": "National Defense Awareness Development",
         "timeline2-desc": "Participated in the PKBN program to increase national defense awareness.",
-        "timeline3-title": "New Student of Pakuan University",
-        "timeline3-desc": "Started S1 Computer Science education at Pakuan University semester 1.",
+        "timeline3-title": "Active Student at Pakuan University",
+        "timeline3-desc": "Active student in S1 Computer Science at Pakuan University.",
         "timeline4-title": "Robotics Seminar",
         "timeline4-desc": "Attended seminar and workshop on robotics applications in various fields.",
         "timeline5-title": "Started Web Development",
@@ -154,13 +135,13 @@ const translations = {
         // About Section
         "about-title": "Tentang Saya",
         "about-subtitle": "Kenali saya lebih dekat",
-        "about-description": "Saya adalah mahasiswa semester 1 di Universitas Pakuan, Fakultas Ilmu Komputer. Saya memiliki minat yang besar dalam pengembangan web, pengelolaan server, dan teknologi terbaru. Selain itu, saya juga memiliki pengalaman dalam editing foto dan video.",
+        "about-description": "Saya adalah mahasiswa aktif di Universitas Pakuan, Fakultas Ilmu Komputer. Saya memiliki minat yang besar dalam pengembangan web, pengelolaan server, dan teknologi terbaru. Selain itu, saya juga memiliki pengalaman dalam editing foto dan video.",
         "about-description-2": "Saya aktif mengikuti berbagai seminar dan workshop untuk meningkatkan pengetahuan dan keterampilan saya di bidang teknologi. Saat ini, saya juga menawarkan jasa instalasi driver dan software komputer, serta menjadi modder kendaraan untuk FiveM Roleplay.",
         "email-label": "Email",
         "education-label": "Pendidikan",
         "education-value": "Universitas Pakuan, Ilmu Komputer",
-        "semester-label": "Semester",
-        "semester-value": "Semester 1",
+        "status-label": "Status",
+        "status-value": "Mahasiswa Aktif",
         "location-label": "Lokasi",
         "location-value": "Bogor, Indonesia",
         "certificates-stat": "Sertifikat",
@@ -174,21 +155,6 @@ const translations = {
         "webdev-title": "Pengembangan Web",
         "software-title": "Software & Alat",
         "server-title": "Manajemen Server",
-        
-        // Skill names
-        "skill-html": "HTML/CSS",
-        "skill-js": "JavaScript",
-        "skill-react": "React",
-        "skill-node": "Node.js",
-        "skill-photoshop": "Adobe Photoshop",
-        "skill-filmora": "Wondershare Filmora",
-        "skill-figma": "Figma",
-        "skill-vscode": "VS Code",
-        "skill-install": "Instalasi Software",
-        "skill-vps": "Manajemen VPS",
-        "skill-dedicated": "Dedicated Server",
-        "skill-cloud": "Cloud Server",
-        "skill-fivem": "Server FiveM",
         
         // Certificates Section
         "certificates-title": "Sertifikat",
@@ -217,10 +183,6 @@ const translations = {
         "service3-desc": "Setup dan konfigurasi server FiveM Roleplay dengan berbagai fitur custom.",
         "service4-title": "Editing Foto & Video",
         "service4-desc": "Editing foto dan video menggunakan software profesional seperti Adobe Photoshop dan Premiere Pro.",
-        "service5-title": "Modder Baju untuk FiveM",
-        "service5-desc": "Dekorasi texture baju custom untuk karakter player dan NPC di server FiveM.",
-        "service6-title": "Jasa Desain Grafis",
-        "service6-desc": "Jasa desain banner, logo, thumbnail, dan konten visual lainnya untuk kebutuhan digital Anda.",
         
         // Timeline Section
         "timeline-title": "Linimasa & Pengalaman",
@@ -229,8 +191,8 @@ const translations = {
         "timeline1-desc": "Memenangkan penghargaan website terbaik pada kegiatan Bincang Ilmu Teknologi (BIT) 2025.",
         "timeline2-title": "Pembinaan Kesadaran Bela Negara",
         "timeline2-desc": "Mengikuti program PKBN untuk meningkatkan kesadaran bela negara.",
-        "timeline3-title": "Mahasiswa Baru Universitas Pakuan",
-        "timeline3-desc": "Memulai pendidikan S1 Ilmu Komputer di Universitas Pakuan semester 1.",
+        "timeline3-title": "Mahasiswa Aktif Universitas Pakuan",
+        "timeline3-desc": "Mahasiswa aktif S1 Ilmu Komputer di Universitas Pakuan.",
         "timeline4-title": "Seminar Robotika",
         "timeline4-desc": "Mengikuti seminar dan workshop tentang aplikasi robotika di berbagai bidang.",
         "timeline5-title": "Memulai Pengembangan Web",
@@ -269,5 +231,4 @@ const translations = {
     }
 };
 
-// Untuk debug - cek apakah translations tersedia
 console.log('Translations loaded:', Object.keys(translations));
