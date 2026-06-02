@@ -79,11 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
     
     if (themeToggle && themeIcon) {
-        // Check for saved theme or prefered color scheme
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         
-        // Set initial theme
         if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
             htmlRoot.setAttribute('data-theme', 'dark');
             themeIcon.classList.remove('fa-moon');
@@ -112,20 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const langFlag = langToggle.querySelector('.lang-flag');
         const langText = langToggle.querySelector('.lang-text');
         
-        // Check for saved language
         let currentLang = localStorage.getItem('language') || 'id';
         
-        // Set initial language
-        updateLanguage(currentLang);
-        
-        langToggle.addEventListener('click', function() {
-            currentLang = currentLang === 'en' ? 'id' : 'en';
-            localStorage.setItem('language', currentLang);
-            updateLanguage(currentLang);
-        });
-        
         function updateLanguage(lang) {
-            // Update flag and text
             if (langFlag && langText) {
                 if (lang === 'en') {
                     langFlag.textContent = '🇺🇸';
@@ -136,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
-            // Update all elements with data-lang-key attribute
             document.querySelectorAll('[data-lang-key]').forEach(element => {
                 const key = element.getAttribute('data-lang-key');
                 if (translations[lang] && translations[lang][key]) {
@@ -150,6 +136,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
+        
+        updateLanguage(currentLang);
+        
+        langToggle.addEventListener('click', function() {
+            currentLang = currentLang === 'en' ? 'id' : 'en';
+            localStorage.setItem('language', currentLang);
+            updateLanguage(currentLang);
+        });
     }
     
     // Loading Animation
@@ -173,13 +167,11 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('active');
         });
         
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
                 
-                // Update active nav link
                 document.querySelectorAll('.nav-link').forEach(navLink => {
                     navLink.classList.remove('active');
                 });
@@ -247,22 +239,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     
-    // Initialize skill bars on page load
     window.addEventListener('load', animateSkillBars);
     window.addEventListener('scroll', animateSkillBars);
     
-    // Contact Form Submission
+    // Contact Form Submission - Web3Forms
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
             
-            alert(`Thank you for your message, ${name}! I'll get back to you soon at ${email}.`);
-            contactForm.reset();
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                const formData = new FormData(contactForm);
+                
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('Pesan berhasil dikirim! Saya akan segera menghubungi Anda kembali.');
+                    contactForm.reset();
+                } else {
+                    alert('Gagal mengirim pesan. Silakan coba lagi nanti.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan. Silakan coba lagi nanti.');
+            } finally {
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            }
         });
     }
     
