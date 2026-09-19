@@ -52,6 +52,12 @@ const translations = {
         "cert3-desc": "Campus life introduction for new students of Pakuan University",
         "cert4-title": "Best Website - Technology Science Talk (BIT) 2025",
         "cert4-desc": "Award for best website in Technology Science Talk activity",
+        "cert5-title": "KPU HIMAKOM 2025",
+        "cert5-desc": "Award for the 2025 Computer Student Association Election Committee",
+        "cert6-title": "Maroon Labkom Membership 2026",
+        "cert6-desc": "Certificate of achievement for successfully joining as a new member of the Maroon Labkom Practicum Assistant class of 2025 in the Computer Laboratory",
+        "experience": "Experience",
+        "membership": "Membership",
         "participation": "Participation",
         "training": "Training",
         "orientation": "Orientation",
@@ -68,6 +74,19 @@ const translations = {
         "service3-desc": "Setup and configuration of FiveM Roleplay servers with various custom features.",
         "service4-title": "Photo & Video Editing",
         "service4-desc": "Photo and video editing using professional software such as Adobe Photoshop and Premiere Pro.",
+
+        // Projects Section
+        "projects": "Projects",
+        "projects-title": "My Projects",
+        "projects-subtitle": "Some of my recent work and creations",
+        "project1-title": "Portfolio Website - BIT 2025",
+        "project1-desc": "An interactive portfolio website with glitch and neon style, featuring ambient music that changes with the mode. Won the Best Website award at Bincang Ilmu Teknologi (BIT) 2025.",
+        "project2-title": "PIK Practicum Exam Website",
+        "project2-desc": "Digital learning portal for the K2UAPIK group featuring member profiles, Microsoft Office & Database learning modules, and a collaboration platform with 6 active members and 4 learning modules.",
+        "project3-title": "MotoTrack - Mobile App",
+        "project3-desc": "An Android 'Strava All-in-One' app for motorcycles, cars, and running. Features real-time navigation, trip recorder with line tracking, weather info, trip analysis, and CSV/GPX export with a modern sporty UI.",
+        "project4-title": "MotoTrack - Website",
+        "project4-desc": "The official landing page for MotoTrack app downloads. Showcases key features, app previews gallery, FAQ, and user feedback form with a responsive sporty design.",
         
         // Timeline Section
         "timeline-title": "Timeline & Experience",
@@ -88,6 +107,8 @@ const translations = {
         "timeline7-desc": "Designing custom clothing textures for player characters and NPCs in FiveM servers with unique variations.",
         "timeline8-title": "Graphic & Multimedia Editor",
         "timeline8-desc": "Creating banner designs, logos, thumbnails, and other visual content for various digital purposes.",
+        "timeline9-title": "Maroon Labkom Practicum Assistant",
+        "timeline9-desc": "Joined as a new member of the Maroon Labkom Practicum Assistant class of 2025 at the Computer Laboratory of Pakuan University.",
         
         // Experience Summary
         "experience-summary-title": "Experience Summary",
@@ -114,6 +135,11 @@ const translations = {
         "footer-text": "Computer Science Student | Web Developer | Server Management",
         "footer-rights": "All rights reserved."
     },
+
+
+    // ==============================================BATAS==============================================
+    // ==============================================BATAS==============================================
+    // ==============================================BATAS==============================================
     
     id: {
         // Navigation
@@ -167,6 +193,12 @@ const translations = {
         "cert3-desc": "Pengenalan kehidupan kampus bagi mahasiswa baru Universitas Pakuan",
         "cert4-title": "Website Terbaik - Bincang Ilmu Teknologi (BIT) 2025",
         "cert4-desc": "Penghargaan untuk website terbaik dalam kegiatan Bincang Ilmu Teknologi",
+        "cert5-title": "KPU HIMAKOM 2025",
+        "cert5-desc": "Penghargaan untuk Panitia Komisi Pemilihan Umum Himpunan Mahasiswa Komputer 2025",
+        "cert6-title": "Keanggotaan Maroon Labkom 2026",
+        "cert6-desc": "Sertifikat penghargaan atas keberhasilan bergabung menjadi anggota baru Asisten Praktikum Maroon Labkom angkatan 2025 di laboratorium Komputer",
+        "experience": "Pengalaman",
+        "membership": "Keanggotaan",
         "participation": "Partisipasi",
         "training": "Pelatihan",
         "orientation": "Orientasi",
@@ -183,6 +215,19 @@ const translations = {
         "service3-desc": "Setup dan konfigurasi server FiveM Roleplay dengan berbagai fitur custom.",
         "service4-title": "Editing Foto & Video",
         "service4-desc": "Editing foto dan video menggunakan software profesional seperti Adobe Photoshop dan Premiere Pro.",
+
+        // Projects Section
+        "projects": "Proyek",
+        "projects-title": "Proyek Saya",
+        "projects-subtitle": "Beberapa karya dan proyek terbaru saya",
+        "project1-title": "Website Portfolio - BIT 2025",
+        "project1-desc": "Website portfolio interaktif bergaya glitch dan neon dengan efek musik ambient yang berubah sesuai mode. Memenangkan penghargaan Website Terbaik di Bincang Ilmu Teknologi (BIT) 2025.",
+        "project2-title": "Website Ujian Praktikum PIK",
+        "project2-desc": "Portal pembelajaran digital untuk kelompok K2UAPIK dengan profil anggota, modul materi Microsoft Office & Database, serta platform kolaborasi untuk 6 anggota aktif dan 4 modul materi.",
+        "project3-title": "MotoTrack - Aplikasi Mobile",
+        "project3-desc": "Aplikasi Android 'Strava All-in-One' untuk motor, mobil, dan lari. Fitur navigasi real-time, trip recorder dengan line tracking, info cuaca, analisis perjalanan, dan export CSV/GPX dengan UI sporty modern.",
+        "project4-title": "MotoTrack - Website",
+        "project4-desc": "Landing page resmi untuk unduhan aplikasi MotoTrack. Menampilkan fitur unggulan, galeri tampilan aplikasi, FAQ, dan form feedback pengguna dengan desain sporty yang responsif.",
         
         // Timeline Section
         "timeline-title": "Linimasa & Pengalaman",
@@ -203,6 +248,8 @@ const translations = {
         "timeline7-desc": "Mendesain texture baju custom untuk karakter player dan NPC di server FiveM dengan variasi yang unik.",
         "timeline8-title": "Editor Grafis & Multimedia",
         "timeline8-desc": "Membuat desain banner, logo, thumbnail, dan konten visual lainnya untuk berbagai keperluan digital.",
+        "timeline9-title": "Asisten Praktikum Maroon Labkom",
+        "timeline9-desc": "Bergabung menjadi anggota baru Asisten Praktikum Maroon Labkom angkatan 2025 di Laboratorium Komputer Universitas Pakuan.",
         
         // Experience Summary
         "experience-summary-title": "Ringkasan Pengalaman",
