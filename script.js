@@ -1,344 +1,194 @@
-// Main JavaScript file for portfolio website
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS (Animate On Scroll)
-    AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-    });
-
-    // Enhanced timeline hover effects
-    document.querySelectorAll('.timeline-content').forEach(content => {
-        content.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateX(10px)';
-            const icon = this.querySelector('.timeline-icon');
-            if (icon) {
-                icon.style.transform = 'scale(1.2)';
-                icon.style.color = 'var(--secondary-color)';
-            }
-        });
-        
-        content.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateX(0)';
-            const icon = this.querySelector('.timeline-icon');
-            if (icon) {
-                icon.style.transform = 'scale(1)';
-                icon.style.color = 'var(--primary-color)';
-            }
-        });
-    });
-
-    // Animate timeline items on scroll
-    const timelineObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateX(0)';
-            }
-        });
-    }, {
-        threshold: 0.2
-    });
-
-    document.querySelectorAll('.timeline-item').forEach(item => {
-        item.style.opacity = '0';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        
-        if (item.classList.contains('fade-right')) {
-            item.style.transform = 'translateX(-50px)';
-        } else if (item.classList.contains('fade-left')) {
-            item.style.transform = 'translateX(50px)';
-        }
-        
-        timelineObserver.observe(item);
-    });
-
-    // Animate summary cards
-    const summaryObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, {
-        threshold: 0.2
-    });
-
-    document.querySelectorAll('.summary-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        summaryObserver.observe(card);
-    });
-    
-    // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
     const htmlRoot = document.getElementById('html-root');
-    const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
-    
-    if (themeToggle && themeIcon) {
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            htmlRoot.setAttribute('data-theme', 'dark');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        }
-        
-        themeToggle.addEventListener('click', function() {
-            if (htmlRoot.getAttribute('data-theme') === 'dark') {
-                htmlRoot.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            } else {
-                htmlRoot.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            }
-        });
-    }
-    
-    // Language Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
     const langToggle = document.getElementById('lang-toggle');
-    
-    if (langToggle && typeof translations !== 'undefined') {
-        const langFlag = langToggle.querySelector('.lang-flag');
-        const langText = langToggle.querySelector('.lang-text');
-        
-        let currentLang = localStorage.getItem('language') || 'id';
-        
-        function updateLanguage(lang) {
-            if (langFlag && langText) {
-                if (lang === 'en') {
-                    langFlag.textContent = '🇺🇸';
-                    langText.textContent = 'EN';
-                } else {
-                    langFlag.textContent = '🇮🇩';
-                    langText.textContent = 'ID';
-                }
-            }
-            
-            document.querySelectorAll('[data-lang-key]').forEach(element => {
-                const key = element.getAttribute('data-lang-key');
-                if (translations[lang] && translations[lang][key]) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        if (element.getAttribute('placeholder') !== undefined) {
-                            element.setAttribute('placeholder', translations[lang][key]);
-                        }
-                    } else {
-                        element.textContent = translations[lang][key];
-                    }
-                }
-            });
-        }
-        
-        updateLanguage(currentLang);
-        
-        langToggle.addEventListener('click', function() {
-            currentLang = currentLang === 'en' ? 'id' : 'en';
-            localStorage.setItem('language', currentLang);
-            updateLanguage(currentLang);
-        });
-    }
-    
-    // Loading Animation
-    const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) {
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                loadingScreen.style.opacity = '0';
-                loadingScreen.style.visibility = 'hidden';
-            }, 1000);
-        });
-    }
-    
-    // Mobile Menu Toggle
+    const langFlag = langToggle.querySelector('.lang-flag');
+    const langText = langToggle.querySelector('.lang-text');
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                
-                document.querySelectorAll('.nav-link').forEach(navLink => {
-                    navLink.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
-    }
-    
-    // Update active nav link on scroll
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // Back to Top Button
+    const navLinks = document.getElementById('primary-navigation');
     const backToTop = document.getElementById('backToTop');
-    
-    if (backToTop) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        
-        backToTop.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-    
-    // Animate skill bars on scroll
-    const skillBars = document.querySelectorAll('.skill-progress');
-    
-    const animateSkillBars = () => {
-        skillBars.forEach(bar => {
-            const width = bar.getAttribute('data-width');
-            const barPosition = bar.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (barPosition < screenPosition && width && !bar.classList.contains('animated')) {
-                bar.style.width = width + '%';
-                bar.classList.add('animated');
-            }
-        });
-    };
-    
-    window.addEventListener('load', animateSkillBars);
-    window.addEventListener('scroll', animateSkillBars);
-    
-    // Contact Form Submission - Web3Forms
     const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
+    const formStatus = document.getElementById('form-status');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let currentLang = localStorage.getItem('language') === 'en' ? 'en' : 'id';
+    let currentTheme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
 
-                    if (!name || !email || !subject || !message) {
-            alert('Mohon isi semua field yang wajib diisi.');
-            return;
-        }
-        
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Mohon masukkan alamat email yang valid.');
-            return;
-        }
-            
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            try {
-                const formData = new FormData(contactForm);
-                
-                const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    alert('Pesan berhasil dikirim! Saya akan segera menghubungi Anda kembali.');
-                    contactForm.reset();
-                } else {
-                    alert('Gagal mengirim pesan. Silakan coba lagi nanti.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Terjadi kesalahan. Silakan coba lagi nanti.');
-            } finally {
-                submitButton.textContent = originalButtonText;
-                submitButton.disabled = false;
-            }
-        });
+    function updateTheme(theme) {
+        currentTheme = theme;
+        htmlRoot.setAttribute('data-theme', theme);
+        themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        themeToggle.setAttribute(
+            'aria-label',
+            translations[currentLang][theme === 'dark' ? 'theme-light-label' : 'theme-dark-label']
+        );
     }
-    
-    // Parallax effect for background elements
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const circles = document.querySelectorAll('.bg-circle');
-        
-        circles.forEach((circle, index) => {
-            const speed = 0.5 + (index * 0.1);
-            const yPos = -(scrolled * speed);
-            circle.style.transform = `translateY(${yPos}px)`;
-        });
-    });
-    
-    // Add hover effect to glass cards
-    const glassCards = document.querySelectorAll('.glass-card');
-    
-    glassCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-    
-    // Initialize floating elements animation
-    const floatElements = document.querySelectorAll('.float-element');
-    
-    floatElements.forEach((element, index) => {
-        element.style.animationDelay = `${index * 0.5}s`;
-    });
-    
-    // Form input focus effects
-    const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
-    
-    formInputs.forEach(input => {
-        const parent = input.parentElement;
-        input.addEventListener('focus', function() {
-            if (parent) parent.classList.add('focused');
-        });
-        
-        input.addEventListener('blur', function() {
-            if (this.value === '' && parent) {
-                parent.classList.remove('focused');
+
+    function updateLanguage(lang) {
+        currentLang = lang;
+        htmlRoot.lang = lang;
+        langFlag.textContent = lang === 'en' ? '🇺🇸' : '🇮🇩';
+        langText.textContent = lang.toUpperCase();
+        langToggle.setAttribute(
+            'aria-label',
+            translations[lang][lang === 'en' ? 'language-toggle-id' : 'language-toggle-en']
+        );
+
+        document.querySelectorAll('[data-lang-key]').forEach(function(element) {
+            const key = element.getAttribute('data-lang-key');
+            const translatedText = translations[lang][key];
+
+            if (translatedText) {
+                element.textContent = translatedText;
             }
         });
+
+        themeToggle.setAttribute(
+            'aria-label',
+            translations[lang][currentTheme === 'dark' ? 'theme-light-label' : 'theme-dark-label']
+        );
+        hamburger.setAttribute(
+            'aria-label',
+            translations[lang][hamburger.getAttribute('aria-expanded') === 'true' ? 'menu-close' : 'menu-open']
+        );
+        backToTop.setAttribute('aria-label', translations[lang]['back-to-top']);
+    }
+
+    function setMenuOpen(isOpen) {
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        hamburger.classList.toggle('active', isOpen);
+        navLinks.classList.toggle('active', isOpen);
+        hamburger.setAttribute('aria-label', translations[currentLang][isOpen ? 'menu-close' : 'menu-open']);
+    }
+
+    updateTheme(currentTheme);
+    updateLanguage(currentLang);
+
+    if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '0px 0px -48px 0px',
+            threshold: 0.08
+        });
+        const revealTargets = document.querySelectorAll('[data-reveal]');
+
+        if (revealTargets.length) {
+            document.body.classList.add('motion-ready');
+            revealTargets.forEach(function(target) {
+                revealObserver.observe(target);
+            });
+        }
+    }
+
+    themeToggle.addEventListener('click', function() {
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', nextTheme);
+        updateTheme(nextTheme);
+    });
+
+    langToggle.addEventListener('click', function() {
+        const nextLanguage = currentLang === 'en' ? 'id' : 'en';
+        localStorage.setItem('language', nextLanguage);
+        updateLanguage(nextLanguage);
+    });
+
+    hamburger.addEventListener('click', function() {
+        setMenuOpen(hamburger.getAttribute('aria-expanded') !== 'true');
+    });
+
+    navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            setMenuOpen(false);
+        });
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') {
+            setMenuOpen(false);
+            hamburger.focus();
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (
+            hamburger.getAttribute('aria-expanded') === 'true' &&
+            !navLinks.contains(event.target) &&
+            !hamburger.contains(event.target)
+        ) {
+            setMenuOpen(false);
+        }
+    });
+
+    const navigationItems = Array.from(navLinks.querySelectorAll('.nav-link'));
+    const sections = navigationItems
+        .map(function(link) {
+            return document.querySelector(link.getAttribute('href'));
+        })
+        .filter(Boolean);
+
+    function updateActiveNavigation() {
+        const currentPosition = window.scrollY + 140;
+        let currentSection = sections[0];
+
+        sections.forEach(function(section) {
+            if (section.offsetTop <= currentPosition) {
+                currentSection = section;
+            }
+        });
+
+        navigationItems.forEach(function(link) {
+            const isCurrent = link.getAttribute('href') === '#' + currentSection.id;
+            link.classList.toggle('active', isCurrent);
+
+            if (isCurrent) {
+                link.setAttribute('aria-current', 'location');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+
+        backToTop.classList.toggle('show', window.scrollY > 420);
+    }
+
+    window.addEventListener('scroll', updateActiveNavigation, { passive: true });
+    window.addEventListener('resize', updateActiveNavigation);
+    updateActiveNavigation();
+
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: reducedMotion.matches ? 'auto' : 'smooth'
+        });
+    });
+
+    document.getElementById('current-year').textContent = String(new Date().getFullYear());
+
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const name = String(formData.get('name')).trim();
+        const email = String(formData.get('email')).trim();
+        const subject = String(formData.get('subject')).trim();
+        const message = String(formData.get('message')).trim();
+        const body = [
+            translations[currentLang]['form-name'] + ': ' + name,
+            translations[currentLang]['form-email'] + ': ' + email,
+            '',
+            message
+        ].join('\n');
+        const mailtoUrl = 'mailto:ezycrdansyh@gmail.com?subject=' +
+            encodeURIComponent(subject) +
+            '&body=' +
+            encodeURIComponent(body);
+
+        formStatus.textContent = translations[currentLang]['form-email-note'];
+        window.location.href = mailtoUrl;
     });
 });
