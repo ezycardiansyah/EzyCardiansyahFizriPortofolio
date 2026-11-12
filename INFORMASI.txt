@@ -5,13 +5,13 @@ portfolio-ezy/
 ├── script.js
 ├── translations.js
 ├── assets/
-│   ├── images/
+│   ├── images/ (BELUM TERSEDIA KECUALI PROFILE)
 │   │   ├── profile.jpg
 │   │   ├── certificate1.jpg
 │   │   ├── certificate2.jpg
 │   │   ├── certificate3.jpg
 │   │   └── certificate4.jpg
-│   └── icons/
+│   └── icons/ (TIDAK MENGGUNAKAN ICONS)
 │       ├── github.svg
 │       ├── linkedin.svg
 │       ├── instagram.svg
